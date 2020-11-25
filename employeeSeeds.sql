@@ -1,3 +1,5 @@
+--Designing the database schema--
+
 DROP DATABASE IF EXISTS name_of_company_db;
 CREATE DATABASE name_of_company_db;
 USE name_of_company_db;
@@ -21,3 +23,13 @@ CREATE TABLE department(
   department_name VARCHAR(30) NOT NULL,
   PRIMARY KEY (id)
 );
+
+INSERT INTO employee (first_name, last_name, title_id, manager_id)
+VALUES ("James", "Smith", 4, Null), ("Tom", "Lee", 3), ("Sarah", "Thompson", 6, NULL), ("Matt", "Jones", 9 NULL), ("Mary", "Jane", 14, NULL), ("Lilly", "Cruz", 4, 2), ("Kyle", "Gates", 6, 9);
+INSERT INTO roles (title, salary, department_id)
+
+VALUES ("Engineering Director", 120098, 9), ("Junior engineer", 100567, 6), ("Senior Engineer", 110678, 3), ("Talent Manager", 101001, 4), ("Marketing representative", 900679, 7), ("Account Manager", 147000, 5);
+INSERT INTO department (department_name)
+
+VALUES ("Engineering Director"), ("Human Resources"), ("Marketing"), ("Client Services");
+
