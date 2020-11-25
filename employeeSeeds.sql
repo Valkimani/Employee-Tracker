@@ -33,3 +33,14 @@ INSERT INTO department (department_name)
 
 VALUES ("Engineering Director"), ("Human Resources"), ("Marketing"), ("Client Services");
 
+SELECT * FROM employee;
+
+SELECT * FROM roles;
+
+SELECT * FROM department;
+
+SELECT first_name last_name FROM employee
+
+JOIN roles ON employee.title_id = roles.Id
+
+JOIN department ON roles.department_id = department.Id;
