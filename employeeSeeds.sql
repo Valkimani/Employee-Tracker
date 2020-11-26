@@ -1,8 +1,8 @@
 --Designing the database schema--
 
-DROP DATABASE IF EXISTS name_of_company_db;
-CREATE DATABASE name_of_company_db;
-USE name_of_company_db;
+DROP DATABASE IF EXISTS comany_name_db;
+CREATE DATABASE company_name_db;
+USE company_name_db;
 CREATE TABLE employee(
   id INT NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(30) NOT NULL,
@@ -25,22 +25,15 @@ CREATE TABLE department(
 );
 
 INSERT INTO employee (first_name, last_name, title_id, manager_id)
-VALUES ("James", "Smith", 4, Null), ("Tom", "Lee", 3), ("Sarah", "Thompson", 6, NULL), ("Matt", "Jones", 9 NULL), ("Mary", "Jane", 14, NULL), ("Lilly", "Cruz", 4, 2), ("Kyle", "Gates", 6, 9);
+VALUES ("John", "Doe", 1, Null), ("Jared", "Chan", 2, 1), ("Ashley", "Rodriquez", 3, NULL), ("Kenny", "Dojaquez", 6, NULL), ("Malia", "Brown", 5, NULL), ("Kevin", "Tupik", 4, 3), ("Gary", "Forest", 7, 4);
 INSERT INTO roles (title, salary, department_id)
 
-VALUES ("Engineering Director", 120098, 9), ("Junior engineer", 100567, 6), ("Senior Engineer", 110678, 3), ("Talent Manager", 101001, 4), ("Marketing representative", 900679, 7), ("Account Manager", 147000, 5);
+VALUES ("Sales Executive", 100000, 1), ("Sales Representative", 75000, 1), ("Lead Engineer", 135000, 2), ("Software Engineer", 125000, 2), ("Accountant", 105000, 3), ("Legal Team Lead", 150000, 4), ("Lawyer", 1550000, 4);
 INSERT INTO department (department_name)
 
-VALUES ("Engineering Director"), ("Human Resources"), ("Marketing"), ("Client Services");
+VALUES ("Sales"), ("Engineering"), ("Accounting"), ("Legal");
 
-SELECT * FROM employee;
-
-SELECT * FROM roles;
-
-SELECT * FROM department;
-
-SELECT first_name last_name FROM employee
-
-JOIN roles ON employee.title_id = roles.Id
-
-JOIN department ON roles.department_id = department.Id;
+SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.name department, CONCATENATE(mgr.first_name,' ', mgr.last_name) manager FROM employee e
+LEFT OUTER JOIN role r ON r.id = e.role_id
+LEFT OUTER JOIN department d ON d.id = r.department_id
+LEFT OUTER JOIN employee manager ON manager.id = e.manager_id;
