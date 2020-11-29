@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
   if (err) throw err;
   console.log("connected");
-  pullSearch();
+  runSearch();
 });
 
 function runSearch() {
@@ -41,7 +41,7 @@ function runSearch() {
         ]
       })
       .then((search)=>{
-        switch (search) {
+        switch (search.action) {
         case "test":
           test();
           break;
@@ -62,7 +62,7 @@ function runSearch() {
           exit();
           break;
           default:
-            console.log("You command is invalid, please update and try again");
+            console.log("Command not valid, please update and try again");
         }
       });
   }
@@ -76,19 +76,19 @@ function runSearch() {
       init();
     });
   }
-//View all employees//
 
-function allEmployees(){
-  connection.query(
-    "SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.name department, CONCATENATE(mgr.first_name,' ', mgr.last_name) manager FROM employee e",
- function (err, data) {
-   if (err) throw err;
-   console.table(data)
-   init();
- }
-    );
+//view all employees//
+function allEmployees() {
+      let query = "SELECT * FROM employee "
+      query += "JOIN roles ON employee.title_id = roles.Id "
+      query += "JOIN department ON roles.department_id = department.Id; ";
+      //console.log(query);
+      connection.query(query, function(err, res) {
+          console.table(res);
+        runSearch();
+      });
 }
-  
+
 function allDepartment() {
   connection.query("SELECT * from department;", function (err, results){
     if (err) throw err;
@@ -104,7 +104,7 @@ function allDepartment() {
           }
           return choiceArray;
         },
-          message:"what department wold you like to search?",
+          message:"what department would you like to search?",
         },
     ])
 .then(({ allDepartment})=>{ 
@@ -119,5 +119,6 @@ function allDepartment() {
   );
  }); 
   });
-
 }
+// function byManager(){
+// }
