@@ -58,9 +58,7 @@ So that I can organize and plan my business
 
 * Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
 
-## Submission on BCS
-
-You are required to submit the following:
+Links
 
 * [Github page](https://github.com/Valkimani/Employee-Tracker)
 
