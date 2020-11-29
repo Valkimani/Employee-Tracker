@@ -5,6 +5,7 @@ Using Content Management Systems to build a solution for managing a company's em
 ## Steps
 A database schema was built containing three tables: Department, Role and Employees.
 
+
 * **department**:
 
   * **id** - INT PRIMARY KEY
@@ -43,14 +44,8 @@ Bonus points if you're able to:
 
   * View the total utilized budget of a department -- ie the combined salaries of all employees in that department
 
-# The challenge is;
 
-As a business owner
-I want to be able to view and manage the departments, roles, and employees in my company
-So that I can organize and plan my business
-```
-
-# Installation
+## Installation
 
 * Use the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
 
@@ -58,9 +53,7 @@ So that I can organize and plan my business
 
 * Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
 
-## Submission on BCS
-
-You are required to submit the following:
+## Links
 
 * [Github page](https://github.com/Valkimani/Employee-Tracker)
 
