@@ -52,17 +52,17 @@ So that I can organize and plan my business
 
 # Installation
 
-* Use the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
+ Use the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
 
-* Use [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3) NPM package to interact with the user via the command-line.
+ Use [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3) NPM package to interact with the user via the command-line.
 
-* Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
+ Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
 
-Links
+# Links
 
-* [Github page](https://github.com/Valkimani/Employee-Tracker)
+ [Github page](https://github.com/Valkimani/Employee-Tracker)
 
-* [Video demo](https://ezgif.com/video-to-gif/ezgif-6-624d90540d1e.webm)
+ [Video demo](https://ezgif.com/video-to-gif/ezgif-6-624d90540d1e.webm)
 
 # License 
 
