@@ -3,6 +3,8 @@ const inquirer = require("inquirer");
 const { exit } = require("process");
 const { S_IFMT } = require("constants");
 const { inherits } = require("util");
+const { before } = require("lodash");
+const { table } = require("console");
 var connection = mysql.createConnection({
   host: "localhost",
 
@@ -32,8 +34,8 @@ function runSearch() {
         choices: [
           "test",
           "View all employees",
-          "View all employees Department",
-          "View all employees Manager",
+          "View all Departments",
+          "View all roles",
           "Add a new employee",
           "Update employee role",
           "Update employee manager",
@@ -50,12 +52,12 @@ function runSearch() {
           allEmployees();
           break;
   
-        case "View all employees Department":
+        case "View all Departments":
           allDepartment();
           break;
   
-        case "View all employees Manager":
-          allManager();
+        case "View all roles":
+          roles();
           break;
   
         case "exit":
@@ -79,46 +81,72 @@ function runSearch() {
 
 //view all employees//
 function allEmployees() {
-      let query = "SELECT * FROM employee "
-      query += "JOIN roles ON employee.title_id = roles.Id "
-      query += "JOIN department ON roles.department_id = department.Id; ";
+  // Added Aliases in the select query//
+      let query = " SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.department_name as department, concat(manager.first_name,' ', manager.last_name)as manager FROM employee e"
+      query += " LEFT JOIN roles r ON e.title_id = r.id "
+      query += " LEFT JOIN department d ON r.department_id = d.id ";
+      // Added an Alias to the empolyee table//
+      query += " LEFT JOIN employee manager ON e.manager_id = manager.id; ";
       //console.log(query);
       connection.query(query, function(err, res) {
           console.table(res);
         runSearch();
+        if(err)
+        console.log("Throw error", err)
       });
 }
 
 function allDepartment() {
   connection.query("SELECT * from department;", function (err, results){
     if (err) throw err;
-    inquirer
-    .prompt([
-      {
-        type: "list",
-        name: "department",
-        choices: function (){
-          let choicesArray=[];
-          for (var i=0; i<results.length; i++){
-            choicesArray.push(results[i].name);
-          }
-          return choiceArray;
-        },
-          message:"what department would you like to search?",
-        },
-    ])
-.then(({ allDepartment})=>{ 
-  connection.query(
-    "SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.name department, CONCATENATE(mgr.first_name,' ', mgr.last_name) manager FROM employee e",
-[allDepartment],
-(err, data) => {
-  if (err) throw err;
-  console.table (data)
-  init();
-}
-  );
- }); 
+    console.table(results)
+    runSearch();
+
   });
 }
+// Added a roles function
+    function roles() {
+      connection.query("SELECT * from roles;", function (err, results){
+        if (err) throw err;
+        console.table(results)
+        runSearch();
+      });
+    }
+//     inquirer
+//     .prompt([
+//       {
+//         type: "list",
+//         name: "department",
+//         choices: function (){
+//           let choicesArray=[];
+//           for (var i=0; i<results.length; i++){
+//             choicesArray.push(results[i].name);
+//           }
+//           return choicesArray;
+//         },
+//           message:"what department would you like to search?",
+//         },
+//     ])
+// .then(({department})=>{ 
+//   connection.query(
+//     "SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.name department, CONCATENATE(mgr.first_name,' ', mgr.last_name) manager FROM employee e",
+// [department],
+// (err, data) => {
+//   if (err) throw err;
+//   console.table (data)
+//   init();
+// }
+//   );
+//   // Catch what goes wrong before the promise
+//  }).catch(function(err){
+//    console.log ("Throw err", err)
+//  })
+ 
 // function byManager(){
 // }
+
+// Update role and employees Add department
+function 
+inquier.prompt
+name: 
+INSERT INTO department set ?

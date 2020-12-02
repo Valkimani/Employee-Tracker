@@ -53,13 +53,10 @@ Bonus points if you're able to:
 
  Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
 
-<<<<<<< HEAD
-## Links
-=======
 # Links
 
  [Github page](https://github.com/Valkimani/Employee-Tracker)
->>>>>>> 0bf671e861b02617bcf13a3bc137d25dc7476a27
+
 
  [Video demo](https://ezgif.com/video-to-gif/ezgif-6-624d90540d1e.webm)
 
