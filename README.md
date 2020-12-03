@@ -56,7 +56,10 @@ Bonus points if you're able to:
 # Links
 
  [Github page](https://github.com/Valkimani/Employee-Tracker)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9866b11d0f41ed4c074d0699addefdb2490f8a24
 
  [Video demo](https://ezgif.com/video-to-gif/ezgif-6-624d90540d1e.webm)
 

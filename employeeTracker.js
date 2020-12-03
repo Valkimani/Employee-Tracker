@@ -82,11 +82,11 @@ function runSearch() {
 //view all employees//
 function allEmployees() {
   // Added Aliases in the select query//
-      let query = " SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.department_name as department, concat(manager.first_name,' ', manager.last_name)as manager FROM employee e"
-      query += " LEFT JOIN roles r ON e.title_id = r.id "
-      query += " LEFT JOIN department d ON r.department_id = d.id ";
+      // let query = " SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.department_name as department, concat(manager.first_name,' ', manager.last_name)as manager FROM employee e"
+      // query += " LEFT JOIN roles r ON e.title_id = r.id "
+      // query += " LEFT JOIN department d ON r.department_id = d.id ";
       // Added an Alias to the empolyee table//
-      query += " LEFT JOIN employee manager ON e.manager_id = manager.id; ";
+      // query += " LEFT JOIN employee manager ON e.manager_id = manager.id; ";
       //console.log(query);
       connection.query(query, function(err, res) {
           console.table(res);
@@ -112,41 +112,4 @@ function allDepartment() {
         runSearch();
       });
     }
-//     inquirer
-//     .prompt([
-//       {
-//         type: "list",
-//         name: "department",
-//         choices: function (){
-//           let choicesArray=[];
-//           for (var i=0; i<results.length; i++){
-//             choicesArray.push(results[i].name);
-//           }
-//           return choicesArray;
-//         },
-//           message:"what department would you like to search?",
-//         },
-//     ])
-// .then(({department})=>{ 
-//   connection.query(
-//     "SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.name department, CONCATENATE(mgr.first_name,' ', mgr.last_name) manager FROM employee e",
-// [department],
-// (err, data) => {
-//   if (err) throw err;
-//   console.table (data)
-//   init();
-// }
-//   );
-//   // Catch what goes wrong before the promise
-//  }).catch(function(err){
-//    console.log ("Throw err", err)
-//  })
- 
-// function byManager(){
-// }
-
-// Update role and employees Add department
-function 
-inquier.prompt
-name: 
-INSERT INTO department set ?
+//    
