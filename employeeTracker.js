@@ -82,11 +82,11 @@ function runSearch() {
 //view all employees//
 function allEmployees() {
   // Added Aliases in the select query//
-      // let query = " SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.department_name as department, concat(manager.first_name,' ', manager.last_name)as manager FROM employee e"
-      // query += " LEFT JOIN roles r ON e.title_id = r.id "
-      // query += " LEFT JOIN department d ON r.department_id = d.id ";
+      let query = " SELECT e.id, e.first_name, e.last_name, r.title, r.salary,d.department_name as department, concat(manager.first_name,' ', manager.last_name)as manager FROM employee e"
+      query += " LEFT JOIN roles r ON e.title_id = r.id "
+      query += " LEFT JOIN department d ON r.department_id = d.id ";
       // Added an Alias to the empolyee table//
-      // query += " LEFT JOIN employee manager ON e.manager_id = manager.id; ";
+      query += " LEFT JOIN employee manager ON e.manager_id = manager.id; ";
       //console.log(query);
       connection.query(query, function(err, res) {
           console.table(res);
