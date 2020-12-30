@@ -58,7 +58,7 @@ Bonus points if you're able to:
  [Github page](https://github.com/Valkimani/Employee-Tracker)
 
 
- [Video demo](https://ezgif.com/video-to-gif/ezgif-3-0af482e87e77.webm)
+ [Video demo](https://drive.google.com/file/d/1Ppor6jehJM1rmUgpocpnVgqUyRqYWbZP/view)
 
 # License 
 
