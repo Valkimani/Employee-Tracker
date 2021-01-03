@@ -37,9 +37,8 @@ So that I can organize and plan my business
 # Links
 
  [Github page](https://github.com/Valkimani/Employee-Tracker)
-<<<<<<< HEAD
+
 [Screencastify](https://drive.google.com/file/d/1Ppor6jehJM1rmUgpocpnVgqUyRqYWbZP/view)
-=======
 
 
  [Video demo](https://drive.google.com/file/d/1Ppor6jehJM1rmUgpocpnVgqUyRqYWbZP/view)
@@ -55,4 +54,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Credits
 - - © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
->>>>>>> 3b56b9724e47b582b1d04c764fa797b63d5612a2
+
