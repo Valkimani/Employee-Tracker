@@ -1,6 +1,6 @@
 # Employee-Tracker
 
-This is an Employee tracker demonstrating how non-developers can view and interact with information stored in a databases. Often these interfaces are known as Content Management Systems. the app has been built for managing a company's employees using node, inquirer, and MySQL. 
+This is an Employee tracker app demonstrating how non-developers can view and interact with information stored on a databases. Often these interfaces are known as Content Management Systems. the app has been built for managing a company's employees using node, inquirer, and MySQL. 
 
 ## Steps
 A database schema was built containing three tables: Department, Role and Employees.
@@ -21,6 +21,7 @@ So that I can organize and plan my business
 ```
 
 ## Screenshots
+
 ![Employees](./images/employees.png)
 
 ![Departments](./images/departments.png)
